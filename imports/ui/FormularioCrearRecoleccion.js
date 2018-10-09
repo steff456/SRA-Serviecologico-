@@ -25,6 +25,7 @@ class FormularioCrearRecoleccion extends Component {
 
     // EventHandlers
     handleChange(event) {
+        //Usar destructuración de objetos, ej en la forma de empresas
         const value = event.target.value;
         this.setState({
             [event.target.name]: value
@@ -32,7 +33,7 @@ class FormularioCrearRecoleccion extends Component {
         }
 
     handleSubmit(event) {
-
+        //Usar destructuración de objetos, ej en la forma de empresas
         let recoleccion ={
             empresa: this.state.empresa,
             recolector:this.state.recolector,
