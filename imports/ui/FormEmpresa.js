@@ -26,23 +26,28 @@ class FormEmpresa extends Component {
 
     // EventHandlers
     handleChange(event) {
-        const value = event.target.value;
+        //Se puede utilizar destructuración de objetos
+        //const value = event.target.value;
+        const { value, name } = event.target;
         this.setState({
-          [event.target.name]: value
+          //[event.target.name]: value
+            name: value,
         });
       }
 
     handleSubmit(event) {
-       
+        //sobra
         let id;  
         event.preventDefault();
+        //Usar destructuración de objetos
+        const { NIT, nomEmpresa, telefono, direccion, nContacto, cContacto } = this.state
         let empresa ={
-            NIT: this.state.NIT,
-            nomEmpresa:this.state.nomEmpresa,
-            telefono: this.state.telefono,
-            direccion: this.state.direccion,
-            nContacto: this.state.nContacto,
-            cContacto:this.state.cContacto
+            NIT,
+            nomEmpresa,
+            telefono,
+            direccion,
+            nContacto,
+            cContacto,
         }
 
         Meteor.call('empresas.add', empresa);   
