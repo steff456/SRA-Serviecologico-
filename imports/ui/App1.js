@@ -19,7 +19,8 @@ class App1 extends Component {
             playerName:null
         }
     }
-
+    
+    //No se esta llamando este método nunca
     renderRunners(){
         return this.props.runners.map((r,i)=>{
             return(<li key={i}
@@ -34,11 +35,11 @@ class App1 extends Component {
     }
 
     addRunner() {
-    
-        const me = this;
+        // La constante sobra.
+        // const me = this;
         Meteor.call('runners.add', name, function (err,player) {
           if(err) {alert(err); return; }
-          me.setState({player})
+          this.setState({player})
         });
       }
     
