@@ -19,6 +19,7 @@ class FormRecolectores extends Component {
 
     // EventHandlers
     handleChange(event) {
+        //Usar destructuración de objetos, ej en la forma de empresas
         const value = event.target.value;
         this.setState({
             [event.target.name]: value
@@ -27,7 +28,7 @@ class FormRecolectores extends Component {
 
     handleSubmit(event) {
         console.log('voy a hacer submit de recolectores');
-
+        //Usar destructuración de objetos, ej en la forma de empresas
         Meteor.users.update({_id: Meteor.userId()}, {$set: {
             'profile.cedula': this.state.cedula,
             'profile.nombre': this.state.nombre,
